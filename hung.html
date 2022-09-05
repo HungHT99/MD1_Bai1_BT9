@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label> Ban kinh:</label>
+<input id="radius" type="text">
+<button onclick="DTvsCV()">Tinh Dien Tich va Chu Vi</button>
+<h1 id="chu_vi"></h1><br>
+<h2 id="dien_tich"></h2>
+<script>
+    function DTvsCV() {
+        let radius = document.getElementById('radius').value;
+        let chuVi = 2*Math.PI*radius;
+        let dienTich = Math.PI*Math.pow(radius,2);
+        document.getElementById('chu_vi').innerHTML = 'Chu vi : '+chuVi;
+        document.getElementById('dien_tich').innerHTML = 'Dien tich:'+dienTich;
+
+    }
+</script>
+</body>
+</html>

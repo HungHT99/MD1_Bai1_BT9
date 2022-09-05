@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="dauvao">
+<select  id="chon1" onchange="CDT()">
+  <option value="vnd">VND</option>
+  <option value="usd">USD</option>
+</select>
+<select  id="chon2" onchange="CDT()">
+    <option value="vnd">VND</option>
+    <option value="usd">USD</option>
+</select>
+<button onclick='CDT()'>Chuyen</button>
+<h1 id="dau_ra"></h1>
+<script>
+    function CDT() {
+
+        let dauVao = document.getElementById('dauvao').value;
+        let chon1 = document.getElementById('chon1').value;
+        let chon2 = document.getElementById('chon2').value;
+        let dauRa = 0;
+        if(chon1==='vnd'){
+            if(chon2==='vnd'){
+                dauRa = dauVao;
+            } else {
+                dauRa = dauVao/23000;
+            }
+        } else {
+            if(chon2==='usd'){
+                dauRa = dauVao;
+            } else {
+                dauRa = dauVao*23000;
+            }
+        }
+document.getElementById('dau_ra').innerHTML = dauRa + " " + chon2
+        
+    }
+</script>
+</body>
+</html>
